@@ -1,0 +1,7 @@
+{
+	"totalLevels": 2,
+	"classes": [
+		{ "level": 1, "class": "monk" },
+		{ "level": 2, "class": "rogue" }
+	]
+}
