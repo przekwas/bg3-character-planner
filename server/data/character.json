@@ -1,7 +1,53 @@
 {
-	"totalLevels": 2,
-	"classes": [
-		{ "level": 1, "class": "monk" },
-		{ "level": 2, "class": "rogue" }
-	]
+  "totalLevels": 12,
+  "classes": [
+    {
+      "level": 1,
+      "class": "fighter"
+    },
+    {
+      "level": 2,
+      "class": "fighter"
+    },
+    {
+      "level": 3,
+      "class": "ranger"
+    },
+    {
+      "level": 4,
+      "class": "ranger"
+    },
+    {
+      "level": 5,
+      "class": "ranger"
+    },
+    {
+      "level": 6,
+      "class": "ranger"
+    },
+    {
+      "level": 7,
+      "class": "ranger"
+    },
+    {
+      "level": 8,
+      "class": "rogue"
+    },
+    {
+      "level": 9,
+      "class": "rogue"
+    },
+    {
+      "level": 10,
+      "class": "rogue"
+    },
+    {
+      "level": 11,
+      "class": "rogue"
+    },
+    {
+      "level": 12,
+      "class": "ranger"
+    }
+  ]
 }
