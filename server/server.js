@@ -16,7 +16,16 @@ app.get('/character', async (req, res) => {
 	try {
 		await characterService.checkDataFile();
 		const characterData = await characterService.readData();
-		res.json(characterData);
+
+		const characterDataModified = {
+			...characterData,
+			classes: characterData.classes.map(progression => ({
+				...progression,
+				class: progression.class[0].toUpperCase() + progression.class.slice(1)
+			}))
+		};
+
+		res.json(characterDataModified);
 	} catch (error) {
 		res.status(500).json({ error: 'Oops my code sucks', message: error.message });
 	}
@@ -29,9 +38,7 @@ app.post('/levelup', async (req, res) => {
 		const selectedClass = req.body.selectedClass;
 
 		if (!selectedClass) {
-			return res
-				.status(400)
-				.json({ message: 'Level up failed', error: 'Invalid input' });
+			return res.status(400).json({ message: 'Level up failed', error: 'Invalid input' });
 		}
 
 		const characterData = await characterService.readData();
@@ -51,7 +58,8 @@ app.post('/levelup', async (req, res) => {
 
 		await characterService.writeData(characterData);
 
-		res.json({ message: 'Level up successful' });
+		res.redirect('/');
+		// res.json({ message: 'Level up successful' });
 	} catch (error) {
 		res.status(500).json({ error: 'Oops my code sucks', message: error.message });
 	}

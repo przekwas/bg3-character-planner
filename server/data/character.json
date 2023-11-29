@@ -3,31 +3,31 @@
   "classes": [
     {
       "level": 1,
-      "class": "fighter"
+      "class": "barbarian"
     },
     {
       "level": 2,
-      "class": "fighter"
+      "class": "barbarian"
     },
     {
       "level": 3,
-      "class": "ranger"
+      "class": "barbarian"
     },
     {
       "level": 4,
-      "class": "ranger"
+      "class": "barbarian"
     },
     {
       "level": 5,
-      "class": "ranger"
+      "class": "barbarian"
     },
     {
       "level": 6,
-      "class": "ranger"
+      "class": "rogue"
     },
     {
       "level": 7,
-      "class": "ranger"
+      "class": "rogue"
     },
     {
       "level": 8,
@@ -35,19 +35,19 @@
     },
     {
       "level": 9,
-      "class": "rogue"
+      "class": "monk"
     },
     {
       "level": 10,
-      "class": "rogue"
+      "class": "monk"
     },
     {
       "level": 11,
-      "class": "rogue"
+      "class": "monk"
     },
     {
       "level": 12,
-      "class": "ranger"
+      "class": "monk"
     }
   ]
 }

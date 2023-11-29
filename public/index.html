@@ -4,10 +4,62 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>DnD Character Planner</title>
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+			crossorigin="anonymous"
+		/>
 		<link rel="stylesheet" href="style.css" />
 	</head>
-	<body>
-		<h1>Hello World!</h1>
+	<body class="bg-light text-dark">
+		<main class="container">
+			<!-- class level form row -->
+			<section class="row justify-content-center mt-5">
+				<div class="col-12 col-md-7">
+					<form class="border rounded shadow p-5 bg-white" action="/levelup" method="POST">
+						<h2 class="text-center mb-4">Character Progression</h2>
+						<div class="mb-3">
+							<label for="selectedClass" class="form-label">Choose a Class</label>
+							<select name="selectedClass" id="selectedClass" class="form-select">
+								<option value="barbarian">Barbarian</option>
+								<option value="bard">Bard</option>
+								<option value="cleric">Cleric</option>
+								<option value="druid">Druid</option>
+								<option value="fighter">Fighter</option>
+								<option value="monk">Monk</option>
+								<option value="paladin">Paladin</option>
+								<option value="ranger">Ranger</option>
+								<option value="rogue">Rogue</option>
+								<option value="sorcerer">Sorcerer</option>
+								<option value="warlock">Warlock</option>
+								<option value="wizard">Wizard</option>
+							</select>
+						</div>
+						<div class="d-flex justify-content-end mt-3">
+							<button type="submit" class="btn btn-primary">Level Up</button>
+						</div>
+					</form>
+				</div>
+			</section>
+			<!-- character overview row -->
+			<section class="row justify-content-center mt-5">
+				<div class="col-12 col-md-7">
+					<div class="border rounded shadow p-4 bg-white">
+						<h3 class="text-center mb-4">Character Overview</h3>
+						<table class="table table-hover" id="characterTable">
+							<thead>
+								<tr>
+									<th scope="col">Level</th>
+									<th scope="col">Class</th>
+								</tr>
+							</thead>
+							<tbody id="characterLevels"></tbody>
+						</table>
+					</div>
+				</div>
+			</section>
+		</main>
 		<script src="app.js"></script>
 	</body>
 </html>
