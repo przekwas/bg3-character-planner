@@ -10,6 +10,7 @@ app.use((req, res, next) => {
 });
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
 
 // GET http://localhost:3000/character
 app.get('/character', async (req, res) => {
@@ -58,8 +59,8 @@ app.post('/levelup', async (req, res) => {
 
 		await characterService.writeData(characterData);
 
-		res.redirect('/');
-		// res.json({ message: 'Level up successful' });
+		// res.redirect('/');
+		res.json({ message: 'Level up successful' });
 	} catch (error) {
 		res.status(500).json({ error: 'Oops my code sucks', message: error.message });
 	}

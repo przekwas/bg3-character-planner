@@ -1,22 +1,46 @@
 fetch('/character')
-    .then(res => res.json())
-    .then(updateCharacter)
-    .catch(e => console.log(e));
+	.then(res => res.json())
+	.then(updateCharacter)
+	.catch(e => console.log(e));
 
 function updateCharacter(data) {
-    const tableBody = document.querySelector('#characterLevels');
+	const tableBody = document.querySelector('#characterLevels');
 
-    data.classes.forEach(progression => {
-        const row = document.createElement('tr');
+    tableBody.innerHTML = '';
 
-        const levelCell = document.createElement('td');
-        levelCell.textContent = progression.level;
-        row.appendChild(levelCell);
+	data.classes.forEach(progression => {
+		const row = document.createElement('tr');
 
-        const classCell = document.createElement('td');
-        classCell.textContent = progression.class;
-        row.appendChild(classCell);
+		const levelCell = document.createElement('td');
+		levelCell.textContent = progression.level;
+		row.appendChild(levelCell);
 
-        tableBody.appendChild(row);
-    });
+		const classCell = document.createElement('td');
+		classCell.textContent = progression.class;
+		row.appendChild(classCell);
+
+		tableBody.appendChild(row);
+	});
 }
+
+const submitBtn = document.querySelector('#submitBtn');
+const selectedClassDropdown = document.querySelector('#selectedClass');
+
+submitBtn.addEventListener('click', function (e) {
+	e.preventDefault();
+	fetch('/levelup', {
+		method: 'POST',
+		headers: {
+			'content-type': 'application/json'
+		},
+		body: JSON.stringify({ selectedClass: selectedClassDropdown.value })
+	})
+		.then(res => res.json())
+		.then(data => {
+            console.log(data);
+            return fetch('/character');
+        })
+        .then(res => res.json())
+        .then(updateCharacter)
+		.catch(e => console.log(e));
+});
