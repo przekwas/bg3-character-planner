@@ -25,6 +25,19 @@ function updateCharacter(data) {
 
 const submitBtn = document.querySelector('#submitBtn');
 const selectedClassDropdown = document.querySelector('#selectedClass');
+const levelDownBtn = document.querySelector('#levelDownBtn');
+
+levelDownBtn.addEventListener('click', function () {
+    fetch('/levelDown', { method: 'DELETE' })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+            return fetch('/character');
+        })
+        .then(res => res.json())
+        .then(updateCharacter)
+        .catch(e => console.log(e));
+});
 
 submitBtn.addEventListener('click', function (e) {
 	e.preventDefault();
