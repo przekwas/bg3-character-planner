@@ -1,5 +1,5 @@
 {
-  "totalLevels": 11,
+  "totalLevels": 12,
   "classes": [
     {
       "level": 1,
@@ -7,19 +7,19 @@
     },
     {
       "level": 2,
-      "class": "druid"
+      "class": "barbarian"
     },
     {
       "level": 3,
-      "class": "cleric"
+      "class": "barbarian"
     },
     {
       "level": 4,
-      "class": "cleric"
+      "class": "barbarian"
     },
     {
       "level": 5,
-      "class": "rogue"
+      "class": "barbarian"
     },
     {
       "level": 6,
@@ -27,22 +27,26 @@
     },
     {
       "level": 7,
-      "class": "sorcerer"
+      "class": "rogue"
     },
     {
       "level": 8,
-      "class": "druid"
+      "class": "rogue"
     },
     {
       "level": 9,
-      "class": "bard"
+      "class": "monk"
     },
     {
       "level": 10,
-      "class": "barbarian"
+      "class": "monk"
     },
     {
       "level": 11,
+      "class": "monk"
+    },
+    {
+      "level": 12,
       "class": "barbarian"
     }
   ]

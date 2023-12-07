@@ -6,7 +6,7 @@ fetch('/character')
 function updateCharacter(data) {
 	const tableBody = document.querySelector('#characterLevels');
 
-    tableBody.innerHTML = '';
+	tableBody.innerHTML = '';
 
 	data.classes.forEach(progression => {
 		const row = document.createElement('tr');
@@ -23,10 +23,11 @@ function updateCharacter(data) {
 	});
 }
 
-const submitBtn = document.querySelector('#submitBtn');
+const levelUpBtn = document.querySelector('#levelUpBtn');
+const levelDownBtn = document.querySelector('#levelDownBtn');
 const selectedClassDropdown = document.querySelector('#selectedClass');
 
-submitBtn.addEventListener('click', function (e) {
+levelUpBtn.addEventListener('click', function (e) {
 	e.preventDefault();
 	fetch('/levelup', {
 		method: 'POST',
@@ -37,10 +38,23 @@ submitBtn.addEventListener('click', function (e) {
 	})
 		.then(res => res.json())
 		.then(data => {
-            console.log(data);
-            return fetch('/character');
-        })
-        .then(res => res.json())
-        .then(updateCharacter)
+			console.log(data);
+			return fetch('/character');
+		})
+		.then(res => res.json())
+		.then(updateCharacter)
+		.catch(e => console.log(e));
+});
+
+levelDownBtn.addEventListener('click', function (e) {
+	e.preventDefault();
+	fetch('/leveldown', { method: 'DELETE' })
+		.then(res => res.json())
+		.then(data => {
+			console.log(data);
+			return fetch('/character');
+		})
+		.then(res => res.json())
+		.then(updateCharacter)
 		.catch(e => console.log(e));
 });

@@ -59,8 +59,29 @@ app.post('/levelup', async (req, res) => {
 
 		await characterService.writeData(characterData);
 
-		// res.redirect('/');
 		res.json({ message: 'Level up successful' });
+	} catch (error) {
+		res.status(500).json({ error: 'Oops my code sucks', message: error.message });
+	}
+});
+
+// DELETE http://localhost:3000/leveldown
+app.delete('/leveldown', async (req, res) => {
+	try {
+		const characterData = await characterService.readData();
+
+		if (characterData.totalLevels <= 0) {
+			return res
+				.status(400)
+				.json({ message: 'Level down failed', error: 'Level minimum reached' });
+		}
+
+		characterData.totalLevels -= 1;
+		characterData.classes.pop();
+
+		await characterService.writeData(characterData);
+
+		res.json({ message: 'Level down successful' });
 	} catch (error) {
 		res.status(500).json({ error: 'Oops my code sucks', message: error.message });
 	}
