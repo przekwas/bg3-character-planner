@@ -1,5 +1,5 @@
 {
-  "totalLevels": 12,
+  "totalLevels": 8,
   "classes": [
     {
       "level": 1,
@@ -32,22 +32,6 @@
     {
       "level": 8,
       "class": "rogue"
-    },
-    {
-      "level": 9,
-      "class": "monk"
-    },
-    {
-      "level": 10,
-      "class": "monk"
-    },
-    {
-      "level": 11,
-      "class": "monk"
-    },
-    {
-      "level": 12,
-      "class": "barbarian"
     }
   ]
 }

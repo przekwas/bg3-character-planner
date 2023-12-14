@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const DATA_PATH = path.join(__dirname, './data/character.json');
+const DATA_PATH = path.join(__dirname, '../data/character.json');
 
 const INITIAL_DATA = {
 	totalLevels: 0,
